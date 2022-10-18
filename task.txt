@@ -1,0 +1,15 @@
+// You have to build a book directory where you would have to create endpoints using the 4 most basic methods: 
+// GET, POST, PUT and DELETE.
+// You had to use GET for getting all books or only 1 book by id or all the books 
+// under particular category.
+
+// With the POST method, you can add a new book to the list and 
+
+// need the PUT method for updating the existing book.
+
+// With the DELETE method you can remove the book from the list.
+// And for storing data you have to use MySql.
+//   Example:
+// Book1 is under history category
+// Book2 is under Maths category
+// Book3 is under Maths category.

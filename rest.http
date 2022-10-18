@@ -1,0 +1,35 @@
+GET http://localhost:8080/get_book/all
+
+###
+GET http://localhost:8080/get_book/634ea8021cd54da136aa066c
+
+###
+GET http://localhost:8080/get_book/maths
+
+###
+POST http://localhost:8080/add_book
+Content-Type: application/json
+
+{
+    "book_name": "Book10",
+    "category": "chemistry"
+}
+
+###
+PUT http://localhost:8080/update_book
+Content-Type: application/json
+
+{
+    "id": "634ea8021cd54da136aa066c",
+    "update": {
+        "category": "physics"
+    }
+}
+
+###
+DELETE http://localhost:8080/delete_book
+Content-Type: application/json
+
+{
+    "id": "634ea4208a42f39c55da06ef"
+}
