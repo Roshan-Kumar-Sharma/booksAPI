@@ -11,7 +11,7 @@ const GET_TYPE = {
         return await Book.findById(id).select("-__v");
     },
     category: async (category) => {
-        return await Book.findB({ category }).select("-__v");
+        return await Book.find({ category }).select("-__v");
     },
 };
 
