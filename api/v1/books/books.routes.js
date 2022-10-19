@@ -1,6 +1,5 @@
 const router = require("express").Router();
 const ObjectId = require("mongoose").Types.ObjectId;
-const { findByIdAndUpdate } = require("./books.models");
 const Book = require("./books.models");
 
 const GET_TYPE = {
@@ -25,7 +24,7 @@ router.get("/get_book/all", async (req, res, next) => {
     }
 });
 
-router.get("/get_book/:id", async (req, res, next) => {
+router.get("/get_book/id/:id", async (req, res, next) => {
     try {
         const { id } = req.params;
 
@@ -39,13 +38,18 @@ router.get("/get_book/:id", async (req, res, next) => {
 
         const books = await GET_TYPE.id(id);
 
+        const isBookFound = !!books;
+        if (!isBookFound) {
+            throw new Error("No such book with provided id exist");
+        }
+
         res.status(200).json(books);
     } catch (err) {
         return next(new Error(err.message));
     }
 });
 
-router.get("/get_book/:category", async (req, res, next) => {
+router.get("/get_book/category/:category", async (req, res, next) => {
     try {
         const { category } = req.params;
 
